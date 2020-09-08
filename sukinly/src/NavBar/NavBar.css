@@ -1,0 +1,18 @@
+.NavBar a {
+  text-decoration: none;
+  color: #777777;
+}
+
+.NavBar a:hover {
+  transition: ease 1s;
+  color: #999999;
+}
+
+.NavBar {
+  background-color: #c4c4c4;
+  padding: 1rem;
+}
+
+.NavBar-right-items {
+  float: right;
+}
