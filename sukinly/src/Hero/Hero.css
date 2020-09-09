@@ -1,0 +1,28 @@
+.Hero > img {
+  width: 100%;
+}
+
+.Hero {
+  position: relative;
+  height: fit-content;
+}
+
+.Hero-description {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  color:white;
+  font-size: 2.5vw;
+  font-weight: 300;
+  background-color: rgba(200, 200, 200, 0.5);
+  padding: 0.5em;
+}
+
+.Hero-description-p1{
+  top: 25%;
+}
+.Hero-description-p2 {
+  top: 65%;
+}
+
+

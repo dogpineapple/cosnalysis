@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import About from "../About";
 import Homepage from "../Homepage";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Routes() {
   return (

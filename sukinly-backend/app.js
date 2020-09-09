@@ -1,10 +1,15 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
+
 app.use(express.json());
+
+app.use(cors({origin: 'http://localhost:3000'}));
 
 const productsRoutes = require("./routes/products");
 
 app.use("/products", productsRoutes);
+
 
 /** 404 handler */
 
