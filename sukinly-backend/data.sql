@@ -8,15 +8,27 @@ DROP TABLE IF EXISTS ingredient_properties;
 DROP TABLE IF EXISTS brands;
 DROP TABLE IF EXISTS product_types;
 
+CREATE TABLE brands (
+    brand_name text PRIMARY KEY
+);
 
-CREATE TABLE products (
-    product_name text PRIMARY KEY,
-    brand integer NOT NULL REFERENCES brands,
-    product_type text NOT NULL REFERENCES product_types
+CREATE TABLE product_types (
+    product_type text PRIMARY KEY
 );
 
 CREATE TABLE ingredients (
     ingredient_name text PRIMARY KEY
+);
+
+CREATE TABLE properties (
+    property text PRIMARY KEY,
+    property_details text NOT NULL
+);
+
+CREATE TABLE products (
+    product_name text PRIMARY KEY,
+    brand text NOT NULL REFERENCES brands,
+    product_type text NOT NULL REFERENCES product_types
 );
 
 CREATE TABLE product_ingredients (
@@ -25,21 +37,8 @@ CREATE TABLE product_ingredients (
     UNIQUE (product_name, ingredient_name)
 );
 
-CREATE TABLE properties (
-    property text PRIMARY KEY,
-    property_details text DEFAULT ""
-);
-
 CREATE TABLE ingredient_properties (
     ingredient_name text REFERENCES ingredients,
     property text REFERENCES properties,
     UNIQUE (ingredient_name, property)
-);
-
-CREATE TABLE brands (
-    brand_name text PRIMARY KEY
-);
-
-CREATE TABLE product_types (
-    product_type text PRIMARY KEY
 );
