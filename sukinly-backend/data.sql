@@ -1,4 +1,4 @@
-\c skinly 
+\c cosnalysis
 
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS ingredients;
