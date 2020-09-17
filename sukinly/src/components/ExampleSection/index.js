@@ -1,9 +1,10 @@
 import React from "react";
+import "./ExampleSection.css";
 
 function ExampleSection() {
   return (
     <div className="ExampleSection">
-      The Example Section.
+      <h1>The Example Section.</h1>
     </div>
   );
 }

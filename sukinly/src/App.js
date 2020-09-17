@@ -1,9 +1,8 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import './App.css';
-import NavBar from "./NavBar";
-import ProductsForm from './ProductsForm';
-import Routes from './Routes';
+import NavBar from "./components/NavBar";
+import Routes from './components/Routes';
 
 function App() {
   return (
