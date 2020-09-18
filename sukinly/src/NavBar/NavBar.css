@@ -1,6 +1,6 @@
 .NavBar a {
   text-decoration: none;
-  color: #777777;
+  color: rgb(255, 255, 255);
 }
 
 .NavBar a:hover {
@@ -9,8 +9,12 @@
 }
 
 .NavBar {
-  background-color: #c4c4c4;
-  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(24, 24, 24, 0.315);
+  padding: 0.3rem;
+  font-weight: 300;
 }
 
 .NavBar-right-items {

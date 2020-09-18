@@ -4,9 +4,11 @@ import "./Hero.css";
 function Hero() {
   return (
     <div className="Hero">
-      <img src="https://previews.123rf.com/images/pinkasevich/pinkasevich1907/pinkasevich190700019/127235504-cosmetic-set-of-blank-label-bottles-for-mockup-packaging-of-skincare-product-cream-serum-oil-shampoo.jpg" alt="stock-skincare" />
-      <p className="Hero-description Hero-description-p1">Curious about your everyday products? </p>
-      <p className="Hero-description Hero-description-p2">Sukin.ly provides statistical information on your skincare products with visuals.</p>
+      <div className="Hero-image"></div>
+      <div className="Hero-about">
+        <h1 className="Hero-description Hero-description-p1 typewriter">Curious about your everyday products? </h1>
+        <h3 className="Hero-description Hero-description-p2">Cosnalysis provides statistical information on your skincare products with visuals.</h3>
+      </div>
     </div>
   );
 }
