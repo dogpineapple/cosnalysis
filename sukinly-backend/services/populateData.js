@@ -4,8 +4,8 @@ const IngredientProperty = require("../models/ingredientProperties");
 const ProductIngredient = require("../models/productIngredients");
 const Ingredient = require("../models/ingredient");
 
-const START_PAGE = 1;
-const END_PAGE = 2;
+const START_PAGE = 6;
+const END_PAGE = 15;
 
 
 async function populateDB() {
