@@ -1,8 +1,8 @@
-const Property = require("./properties");
+const Property = require("./property");
 const db = require("../db");
 
 class IngredientProperty {
-  
+
   // ingredientName= STRING, ingredientFunctions= ARRAY
   static async addIngredientProperty(ingredientName, ingredientFunctions) {
 
