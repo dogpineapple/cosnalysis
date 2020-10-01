@@ -1,4 +1,4 @@
-require('dotenv').config();
+console.log(require('dotenv').config({path: '../.env'}));
 
 const SECRET = process.env.SECRET_KEY || 'test';
 
@@ -15,11 +15,11 @@ const SKINCARISMA_PASS = process.env.SKINCARISMA_PASS;
 
 let DB_URI;
 
-if (process.env.NODE_ENV === 'test') {
-  DB_URI = 'sukinly-test';
-} else {
-  DB_URI = process.env.DATABASE_URL || 'sukinly';
-}
+// if (process.env.NODE_ENV === 'test') {
+//   DB_URI = 'cosnalysis-test';
+// } else {
+  DB_URI = process.env.DATABASE_URL || 'cosnalysis';
+// }
 
 console.log('Using database', DB_URI);
 

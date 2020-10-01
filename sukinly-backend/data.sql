@@ -1,34 +1,26 @@
 \c cosnalysis
 
-DROP TABLE IF EXISTS products;
-DROP TABLE IF EXISTS ingredients;
-DROP TABLE IF EXISTS product_ingredients;
-DROP TABLE IF EXISTS properties;
-DROP TABLE IF EXISTS ingredient_properties;
-DROP TABLE IF EXISTS brands;
-DROP TABLE IF EXISTS product_types;
-
-CREATE TABLE brands (
-    brand_name text PRIMARY KEY
-);
-
-CREATE TABLE product_types (
-    product_type text PRIMARY KEY
-);
+DROP TABLE IF EXISTS products cascade;
+DROP TABLE IF EXISTS ingredients cascade;
+DROP TABLE IF EXISTS product_ingredients cascade;
+DROP TABLE IF EXISTS properties cascade;
+DROP TABLE IF EXISTS ingredient_properties cascade;
 
 CREATE TABLE ingredients (
     ingredient_name text PRIMARY KEY
 );
 
 CREATE TABLE properties (
-    property text PRIMARY KEY,
-    property_details text NOT NULL
+    id SERIAL PRIMARY KEY,
+    property text,
+    UNIQUE(property)
 );
 
 CREATE TABLE products (
     product_name text PRIMARY KEY,
-    brand text NOT NULL REFERENCES brands,
-    product_type text NOT NULL REFERENCES product_types
+    brand_name text NOT NULL,
+    product_url text,
+    UNIQUE(brand_name, product_name)
 );
 
 CREATE TABLE product_ingredients (
@@ -39,6 +31,6 @@ CREATE TABLE product_ingredients (
 
 CREATE TABLE ingredient_properties (
     ingredient_name text REFERENCES ingredients,
-    property text REFERENCES properties,
-    UNIQUE (ingredient_name, property)
+    property_id integer REFERENCES properties,
+    UNIQUE (ingredient_name, property_id)
 );

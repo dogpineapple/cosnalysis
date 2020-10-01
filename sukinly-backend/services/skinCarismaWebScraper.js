@@ -94,10 +94,10 @@ const scrapeProductsPage = async (pageNum, page, products) => {
     productName
     brandName
     productUrl
-    ingredients: {
+    ingredients: [{
       ingredientName:
       ingredientFunctions:
-    }
+    }]
   }
   */
 
@@ -106,7 +106,7 @@ const scrapeProductsPage = async (pageNum, page, products) => {
     promises.push(scrapeProductInfo(el, products));
   });
 
-  await Promise.all(promises);
+  await Promise.all(promises).catch((e) => console.log(e));
 };
 
 const scrapeSkinCarisma = async (pageStart, pageEnd) => {
