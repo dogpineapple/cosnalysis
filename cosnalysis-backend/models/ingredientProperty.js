@@ -18,6 +18,19 @@ class IngredientProperty {
       }
     });
   }
+
+  static async getIngredientProperties(ingredientName) {
+    // obtain all properties of a ingredient, return all records
+    const result = await db.query(
+      `SELECT properties.property
+      FROM ingredient_properties JOIN properties
+      ON properties.id=ingredient_properties.property_id
+      WHERE ingredient_properties.ingredient_name=$1`,
+      [ingredientName]
+    );
+
+    return result.rows;
+  }
 }
 
 module.exports = IngredientProperty;

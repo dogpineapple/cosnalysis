@@ -1,5 +1,6 @@
 const express = require("express");
 const Product = require("../models/product");
+const ProductIngredient = require("../models/productIngredient");
 const router = express.Router();
 
 router.post("/ingredients", async function (req, res, next) {
@@ -37,12 +38,22 @@ router.post("/highest-occurring", async function (req, res, next) {
    * }
    */
 
-   // get the list of product names... 
-   // ask the db "what are the products ingredients?"
+  let product_ingredients = [];
+
+  // obtain the ingredients list for all products in the req.body
+  for (product in req.body) {
+    // ingredients = { ingredients_list: [{ ingredient, ingredient_properties}]};
+    const ingredientsList = await ProductIngredient.getIngredientsList(req.body[product]);
+    product_ingredients.push({[req.body[product]]: ingredientsList});
+  }
+
+  
+
    // then take the product_ingredients and calculate the frequencies!
         // product_1 {product_name, ingredients_list}
         // product_2 {product_name, ingredients_list}
         // product_3 {product_name, ingredients_list}
+  
 
 
   return res.json(`heres the products and ingredients: ${product_ingredients}`);
